@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block title %}Grades{% endblock %}
+{% block content %}
+<a href="/admin/core/grade/add/" class="btn btn-primary mb-3">+ Add Grade</a>
+<div class="card">
+<table class="table table-hover mb-0">
+    <thead class="table-light"><tr><th>Student</th><th>Subject</th><th>Exam</th><th>Score</th><th>Term</th></tr></thead>
+    <tbody>
+    {% for g in grades %}
+    <tr>
+        <td>{{ g.student }}</td><td>{{ g.subject }}</td><td>{{ g.exam_type }}</td>
+        <td>{{ g.score }} / {{ g.max_score }}</td><td>{{ g.term }}</td>
+    </tr>
+    {% empty %}<tr><td colspan="5" class="text-center text-muted py-4">No grades yet.</td></tr>
+    {% endfor %}
+    </tbody>
+</table>
+</div>
+{% endblock %}
