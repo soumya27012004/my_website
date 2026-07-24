@@ -349,13 +349,13 @@ If you like this project, don't forget to
 
 # 👨‍💻 Developer
 
-**Your Name**
+**Soumya Ranjan Pal**
 
 🎓 Django Full Stack Developer
 
-📧 your@email.com
+📧 spal41248@gmail.com
 
-🌐 GitHub: https://github.com/yourusername
+🌐 GitHub: https://github.com/soumya
 
 ---
 
