@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block title %}Classes{% endblock %}
+{% block content %}
+<a href="/admin/core/schoolclass/add/" class="btn btn-primary mb-3">+ Add Class</a>
+<div class="card">
+<table class="table table-hover mb-0">
+    <thead class="table-light"><tr><th>Name</th><th>Grade</th><th>Section</th><th>Teacher</th><th>Capacity</th><th>Year</th></tr></thead>
+    <tbody>
+    {% for c in classes %}
+    <tr>
+        <td>{{ c.name }}</td><td>{{ c.grade }}</td><td>{{ c.section }}</td>
+        <td>{{ c.teacher|default:"-" }}</td><td>{{ c.capacity }}</td><td>{{ c.academic_year }}</td>
+    </tr>
+    {% empty %}<tr><td colspan="6" class="text-center text-muted py-4">No classes yet.</td></tr>
+    {% endfor %}
+    </tbody>
+</table>
+</div>
+{% endblock %}

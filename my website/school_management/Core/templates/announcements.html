@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}Announcements{% endblock %}
+{% block content %}
+<a href="/admin/core/announcement/add/" class="btn btn-primary mb-3">+ New Announcement</a>
+{% for ann in announcements %}
+<div class="card p-3 mb-3">
+    <div class="d-flex justify-content-between">
+        <strong>{{ ann.title }}</strong>
+        <span class="badge bg-secondary">{{ ann.get_target_audience_display }}</span>
+    </div>
+    <p class="mt-2 mb-1">{{ ann.content }}</p>
+    <small class="text-muted">{{ ann.created_at|date:"F d, Y" }}</small>
+</div>
+{% empty %}<p class="text-muted">No announcements yet.</p>
+{% endfor %}
+{% endblock %}

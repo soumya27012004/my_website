@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}Subjects{% endblock %}
+{% block content %}
+<a href="/admin/core/subject/add/" class="btn btn-primary mb-3">+ Add Subject</a>
+<div class="card">
+<table class="table table-hover mb-0">
+    <thead class="table-light"><tr><th>Name</th><th>Code</th><th>Class</th><th>Teacher</th></tr></thead>
+    <tbody>
+    {% for s in subjects %}
+    <tr><td>{{ s.name }}</td><td><code>{{ s.code }}</code></td><td>{{ s.school_class|default:"-" }}</td><td>{{ s.teacher|default:"-" }}</td></tr>
+    {% empty %}<tr><td colspan="4" class="text-center text-muted py-4">No subjects yet.</td></tr>
+    {% endfor %}
+    </tbody>
+</table>
+</div>
+{% endblock %}
